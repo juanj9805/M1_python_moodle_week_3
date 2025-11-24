@@ -18,10 +18,13 @@ def buscar_producto (lista):
     for product in lista:
         if product["nombre"] == search_product:
             print(f"Producto encontrado:\n{product}")
-        return product
+    return product
 
 def actualizar_producto(lista):
     product_found = buscar_producto(lista)
+    if product_found is None:
+        return
+    
     input_key_answer = string_input("Clave del producto: ")
     input_product_new_value = string_input("Nombre nuevo del producto: ")
     product_found[input_key_answer] = input_product_new_value   
@@ -31,10 +34,10 @@ def eliminar_producto (lista):
     product_to_delete = string_input("Nombre del producto a eliminar")
     for product in lista:    
         if product["nombre"] == product_to_delete:
-            print(product_to_delete)
+            print(product)
             lista.remove(product)
-    print(lista)
-    return product_to_delete
+            return product
+    return None
 
 def calcular_estadisticas (lista):
     products_amount = 0
@@ -49,4 +52,4 @@ def calcular_estadisticas (lista):
         if product["cantidad"] > product_major_stock:
             product_major_stock = product["cantidad"] 
 
-    return [products_amount,price_all_prodcuts,product_more_expensive,product_major_stock,]
+    return products_amount,price_all_prodcuts,product_more_expensive,product_major_stock,

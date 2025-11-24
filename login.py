@@ -1,7 +1,7 @@
 import csv
 login_attempts = 3
 
-from colorama import Fore, Style, init
+from colorama import Fore, init
 
 init()
 

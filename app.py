@@ -30,13 +30,13 @@ while follow:
             statistics_data = calcular_estadisticas(list_inventory)
             choice = options()
             if choice == 1:
-                print(statistics_data[0])
+                print(f"La cantidad total de productos en el invenatio es: {statistics_data[0]}")
             elif choice == 2:
-                print(statistics_data[1])
+                print(f"El valor total de todos los productos en el inventario es: {statistics_data[1]}")
             elif choice == 3:
-                print(statistics_data[2])
+                print(f"El producto mas caro en el invantario cuesta: {statistics_data[2]}")
             elif choice == 4:
-                print(statistics_data[3])
+                print(f"El producto con mayor stock tiene {statistics_data[3]} unidades")
             elif choice == 5:
                 follow_analitics = False
     elif principal_choice == 7:
